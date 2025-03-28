@@ -57,3 +57,35 @@
     ```
     Just check the check box in cluster configuration and give your user the required permissions to the storage account using iam roles.
     ```
+
+
+## Secrets Management
+
+### Databricks backed secrets
+
+- Go to home page of databricks workspace
+- visit url {adb*****.net/?o=****#}secrets/createScope
+- Create a new secret scope
+
+
+### Azure Key Vault backed secrets (⚙️Recommended)
+
+#### Add secrets to Azure Key Vault
+#### Create databricks secret scope
+#### Get secrets using ``` dbutils.secret.get```
+
+### Usage
+
+```
+dbutils.secrets.help()
+
+
+dbutils.secrets.listScopes()
+
+
+dbutils.secrets.list(scope = '<secret-scope-name>')
+
+
+dbutils.secrets.get(scope = '<secret-scope-name>', key = '<azure-keyvault-secret-name>')
+
+````
