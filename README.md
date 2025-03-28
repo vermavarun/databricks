@@ -89,3 +89,6 @@ dbutils.secrets.list(scope = '<secret-scope-name>')
 dbutils.secrets.get(scope = '<secret-scope-name>', key = '<azure-keyvault-secret-name>')
 
 ````
+
+
+## Mounting ADLS
