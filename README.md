@@ -1,5 +1,8 @@
 # databricks
 
+<details>
+<summary>Access types with ADLS</summary>
+
 ## Access types with ADLS
 
 - Using access keys
@@ -26,7 +29,6 @@
     display(spark.read.csv("abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/data.csv"))
 
     ```
-
 
 - Using Service Principal
   ```
@@ -59,6 +61,11 @@
     ```
 
 
+</details>
+
+<details>
+<summary>Secrets Management</summary>
+
 ## Secrets Management
 
 ### Databricks backed secrets
@@ -73,6 +80,7 @@
 #### Add secrets to Azure Key Vault
 #### Create databricks secret scope
 #### Get secrets using ``` dbutils.secret.get```
+
 
 ### Usage
 
@@ -91,4 +99,11 @@ dbutils.secrets.get(scope = '<secret-scope-name>', key = '<azure-keyvault-secret
 ````
 
 
+</details>
+
+<details>
+<summary>Mounting ADLS</summary>
+
 ## Mounting ADLS
+
+</details>
