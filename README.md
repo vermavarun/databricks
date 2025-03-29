@@ -106,4 +106,31 @@ dbutils.secrets.get(scope = '<secret-scope-name>', key = '<azure-keyvault-secret
 
 ## Mounting ADLS
 
+### Mounting ADLS Gen2 using Service Principal
+
+```
+configs = {"fs.azure.account.auth.type": "OAuth",
+          "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+          "fs.azure.account.oauth2.client.id": client_id,
+          "fs.azure.account.oauth2.client.secret": client_secret,
+          "fs.azure.account.oauth2.client.endpoint": f"https://login.microsoftonline.com/{tenant_id}/oauth2/token"}
+
+
+dbutils.fs.mount(
+  source = "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/",
+  mount_point = "/mnt/<storage-account-name>/<container-name>",
+  extra_configs = configs)
+
+
+display(dbutils.fs.ls("/mnt/<storage-account-name>/<container-name>"))
+
+
+display(spark.read.csv("/mnt/<storage-account-name>/<container-name>/circuits.csv"))
+
+
+display(dbutils.fs.mounts())
+
+dbutils.fs.unmount('/mnt/<storage-account-name>/<container-name>')
+
+```
 </details>
