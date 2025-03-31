@@ -134,3 +134,30 @@ dbutils.fs.unmount('/mnt/<storage-account-name>/<container-name>')
 
 ```
 </details>
+
+
+
+<details>
+<summary>Spark</summary>
+
+## Spark Architecture
+- Spark Application
+  - A user program that uses the Spark API to process data.
+- Driver
+  - The process that runs the main() function of the application and is the place where the SparkContext is created.
+- Executor
+  - A distributed agent responsible for executing the tasks that Spark sends to it.
+- Cluster Manager
+  - Each Spark application has its own executors.
+- Worker Node
+  - The cluster manager is responsible for allocating resources to the application.
+- Task
+  - A unit of work that will be sent to one executor.
+- Job
+  - A job is a set of tasks that are executed in parallel.
+- Stage
+  -  A stage is a set of tasks that are executed in parallel.
+
+
+
+</details>
